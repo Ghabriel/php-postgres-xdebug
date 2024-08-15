@@ -1,0 +1,11 @@
+services:
+  webserver:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: apache2-foreground
+    ports:
+     - "8000:80"
+    restart: unless-stopped
+    volumes:
+     - ./:/var/www
